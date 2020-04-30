@@ -115,6 +115,12 @@ namespace messageapi.Controllers
         }
 
         public string ReadQueueMessages(){
+            // definir nombre del queue, en caso de no existir activemq lo crea
+            // definir el uri del endpoint de aw - aws acepta ssl no tcp asi que el string cambia en el protocolo
+            // al ser ssl hay que enviar las credenciales
+            // apache.nms connectionfactory provee manejo de comunicacion con el queue
+            // definir el "producer" en caso de la clase que envia de mensaje 
+            // definir el "receiver" en caso de ser el servicio consumiendo el queue 
 
             Console.WriteLine("< --- Starting GTMS queue messaging system --- >");
 
@@ -124,7 +130,7 @@ namespace messageapi.Controllers
             string brokerUri = $"activemq:ssl://b-57e8bf3e-69c9-4bec-b528-de407901bd09-1.mq.us-east-2.amazonaws.com:61617";  // prod broker
             NMSConnectionFactory factory = new NMSConnectionFactory(brokerUri);
         
-            using (IConnection connection = factory.CreateConnection("admin","adminactivemq"))
+            using (IConnection connection = factory.CreateConnection("admin","adminactivemq"))  
             {
                 connection.Start();
                 using (Apache.NMS.ISession session = connection.CreateSession(AcknowledgementMode.AutoAcknowledge))
@@ -134,7 +140,7 @@ namespace messageapi.Controllers
                 IMessage msg = consumer.Receive();
                 if (msg is ITextMessage)
                 {
-                    Console.WriteLine($"Adding message to queue topic: {queueName}"); 
+                    Console.WriteLine($"Adding message to queue: {queueName}"); 
 
                     ITextMessage txtMsg = msg as ITextMessage;
                     string body = txtMsg.Text;    
