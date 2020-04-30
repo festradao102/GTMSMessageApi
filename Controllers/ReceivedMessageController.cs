@@ -7,8 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using messageapi;
 using messageapi.Models;
-using Apache.NMS;
+using Apache.NMS;           // queue message activeMQ with aws
 using Apache.NMS.Util;
+using MailKit.Net.Smtp;     // packages used to send emails in .net
+using MailKit;
+using MimeKit;
+using System.Text.RegularExpressions;
+using System.Xml.Linq;
 
 namespace messageapi.Controllers
 {
@@ -147,6 +152,7 @@ namespace messageapi.Controllers
                     Console.WriteLine($"Received message: {txtMsg.Text}");
                     connection.Close();
 
+                    sendEmail(body);
                     rcvdMsg.Description = body;
                     rcvdMsg.ReceivedDate = System.DateTime.Now;                        
                 }
@@ -156,6 +162,17 @@ namespace messageapi.Controllers
                 }
                 return "Received message(s)";
                 }
+            }
+        }
+
+            public void sendEmail(String messageBody){           
+
+            string pattern = "<Identification>(.*?)</Identification>";
+            string input = messageBody;
+
+            Match match = Regex.Match(input, pattern);
+            if (match.Success){
+                System.Console.WriteLine("El email es " + match.Groups[1].Value);
             }
         }
 
