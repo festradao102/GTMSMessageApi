@@ -13,7 +13,6 @@ using MailKit.Net.Smtp;     // packages used to send emails in .net
 using MailKit;
 using MimeKit;
 using System.Text.RegularExpressions;
-using System.Xml.Linq;
 
 namespace messageapi.Controllers
 {
@@ -166,15 +165,44 @@ namespace messageapi.Controllers
             }
         }
 
-            public void sendEmail(String messageBody){           
+            public void sendEmail(String messageBody){    
 
+            //extract email
+            //esto deberia ser con xml parser, no con expr. regulares !!
             string pattern = "<Email>(.*?)</Email>";
             string input = messageBody;
+            string toEmail;
 
             Match match = Regex.Match(input, pattern);
             if (match.Success){
                 System.Console.WriteLine("El email es " + match.Groups[1].Value);
-            }
+                toEmail = match.Groups[1].Value;            
+
+                //instanciar un mimemessage
+                var message = new MimeMessage();                 
+
+                //from
+                message.From.Add(new MailboxAddress("Admin torneo","festradao102@gmail.com"));
+
+                //to
+                message.To.Add(new MailboxAddress("Jugador registrado",toEmail));
+
+                //subject
+                message.Subject = "Registro Torneo";
+
+                //body
+                message.Body = new TextPart("plain"){
+                    Text = "Usted ha sido registrado para el campeonato de futbol. Por favor pongase en contacto con su entrenador."
+                };
+
+                //email config
+                using(var client = new SmtpClient()){
+                    client.Connect("smtp.gmail.com", 587, false);   //server, port, useSSL
+                    client.Authenticate("festradao102@gmail.com","Pizza2x1");
+                    client.Send(message);
+                    client.Disconnect(true);
+                }
+            }  
         }
 
     }
