@@ -182,7 +182,7 @@ namespace messageapi.Controllers
                 var message = new MimeMessage();                 
 
                 //from
-                message.From.Add(new MailboxAddress("Admin torneo","festradao102@gmail.com"));
+                message.From.Add(new MailboxAddress("Admin torneo","devgtms@gmail.com"));
 
                 //to
                 message.To.Add(new MailboxAddress("Jugador registrado",toEmail));
@@ -198,7 +198,7 @@ namespace messageapi.Controllers
                 //email config
                 using(var client = new SmtpClient()){
                     client.Connect("smtp.gmail.com", 587, false);   //server, port, useSSL
-                    client.Authenticate("festradao102@gmail.com","Pizza2x1");
+                    client.Authenticate("devgtms@gmail.com","Pizza2x1");
                     client.Send(message);
                     client.Disconnect(true);
                 }
