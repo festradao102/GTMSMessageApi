@@ -131,3 +131,7 @@ C:\Users\Fabs\Documents\Workspace vscode\MessageApi\bin\Debug\netcoreapp3.1\runt
 C:\Users\Fabs\Documents\Workspace vscode\MessageApi\bin\Debug\netcoreapp3.1\MailKit.dll
 C:\Users\Fabs\Documents\Workspace vscode\MessageApi\bin\Debug\netcoreapp3.1\MimeKit.dll
 C:\Users\Fabs\Documents\Workspace vscode\MessageApi\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\Fabs\Documents\Workspace vscode\MessageApi\bin\Debug\netcoreapp3.1\web.config
+C:\Users\Fabs\Documents\Workspace vscode\MessageApi\bin\Debug\netcoreapp3.1\aws-windows-deployment-manifest.json
+C:\Users\Fabs\Documents\Workspace vscode\MessageApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Server.Kestrel.Https.dll
+C:\Users\Fabs\Documents\Workspace vscode\MessageApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
