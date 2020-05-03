@@ -198,7 +198,7 @@ namespace messageapi.Controllers
                 //email config
                 using(var client = new SmtpClient()){
                     client.Connect("smtp.gmail.com", 587, false);   //server, port, useSSL
-                    client.Authenticate("devgtms@gmail.com","Pizza2x1");
+                    client.Authenticate("devgtms@gmail.com","#####");
                     client.Send(message);
                     client.Disconnect(true);
                 }

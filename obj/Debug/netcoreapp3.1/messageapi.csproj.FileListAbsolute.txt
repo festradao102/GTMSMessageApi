@@ -135,3 +135,9 @@ C:\Users\Fabs\Documents\Workspace vscode\MessageApi\bin\Debug\netcoreapp3.1\web.
 C:\Users\Fabs\Documents\Workspace vscode\MessageApi\bin\Debug\netcoreapp3.1\aws-windows-deployment-manifest.json
 C:\Users\Fabs\Documents\Workspace vscode\MessageApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Server.Kestrel.Https.dll
 C:\Users\Fabs\Documents\Workspace vscode\MessageApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
+C:\Users\Fabs\Documents\Workspace vscode\MessageApi\bin\Debug\netcoreapp3.1\site\web.config
+C:\Users\Fabs\Documents\Workspace vscode\MessageApi\bin\Debug\netcoreapp3.1\site\appsettings.Development.json
+C:\Users\Fabs\Documents\Workspace vscode\MessageApi\bin\Debug\netcoreapp3.1\site\appsettings.json
+C:\Users\Fabs\Documents\Workspace vscode\MessageApi\bin\Debug\netcoreapp3.1\site\aws-windows-deployment-manifest.json
+C:\Users\Fabs\Documents\Workspace vscode\MessageApi\bin\Debug\netcoreapp3.1\site\messageapi.deps.json
+C:\Users\Fabs\Documents\Workspace vscode\MessageApi\bin\Debug\netcoreapp3.1\site\messageapi.runtimeconfig.json
