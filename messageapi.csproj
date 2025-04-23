@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Apache.NMS.ActiveMQ" Version="1.7.2" />
+    <PackageReference Include="Apache.NMS.ActiveMQ" Version="2.1.1" />
     <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.3.101" />
     <PackageReference Include="AWSSDK.MQ" Version="3.3.105.56" />
     <PackageReference Include="MailKit" Version="2.6.0" />
